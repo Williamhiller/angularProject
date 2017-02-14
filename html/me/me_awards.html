@@ -1,0 +1,24 @@
+
+<ion-view title="我的奖品">
+    <ion-header-bar align-title="center" class="bar">
+        <div class="buttons">
+            <button class="button" ng-click="back()">
+                返回
+            </button>
+        </div>
+        <h2 class="title">我的奖品</h2>
+    </ion-header-bar>
+
+    <ion-content>
+        <ion-refresher pulling-text="下拉更新" on-refresh="doRefresh()"></pulling-text></ion-refresher>
+        <div class="list dark">
+            <div class="item item-avatar item-icon-right" ng-repeat="prize in prizeList">
+                <img ng-src="{{prize.PRIZE_IMAGE}}" alt="">
+                <h2>{{prize.PRIZE_NAME}}</h2>
+                <p>{{prize.CREATED_DATE}}</p>
+                <i class="icon status">{{prize.IS_SEND}}</i>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="moreflag" on-infinite="doMore()" distance="1%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

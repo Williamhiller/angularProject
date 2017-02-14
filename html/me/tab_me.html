@@ -1,0 +1,43 @@
+
+<ion-view title="电竞之家" class="bg-img">
+
+    <ion-content>
+        <div class="header me">
+            <div class="coin-box col">
+                <span class="title">燃币:</span>
+                <span class="c-count coins">{{data.TOTAL_INTEGRAL}}</span>
+            </div>
+        </div>
+
+        <p class="remind">兑换奖品必须完善电话和收货地址，工作人员会和您取得联系</p>
+
+        <div class="list card">
+            <a class="item item-icon-left item-icon-right"
+               ng-click="stateGo('tab.me_awards')">
+                <i class="icon ion-ios-box"></i>
+                我的奖品
+                <span class="item-note">{{data.PRIZE_COUNT}}</span>
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+            <a class="item item-icon-left item-icon-right"
+               ng-click="stateGo('tab.me_phone')">
+                <i class="icon ion-ios-telephone"></i>
+                我的电话
+                <span class="item-note">{{data.MOBILE|splitBy:'phoneReplace'}}</span>
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+            <a class="item item-icon-left item-icon-right"
+               ng-click="stateGo('tab.me_address')">
+                <i class="icon ion-ios-location"></i>
+                我的地址
+                <span class="item-note">{{data.ADDRESS|splitBy:'addressReplace'}}</span>
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="img-box">
+            <img src="frame/images/me_footer.png" alt="">
+        </div>
+        <wxshare></wxshare>
+    </ion-content>
+</ion-view>

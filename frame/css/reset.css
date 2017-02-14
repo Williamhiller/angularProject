@@ -1,0 +1,59 @@
+
+
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53" !important;
+    font-size: 14px;
+    line-height: 1;
+    line-height: 1.5;
+    color: #666;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html, div, span,h1, h2, h3, h4, h5, h6, p,a, big, em, img,
+small, strong, tt,i,dl, dt, dd, ol, ul, li,
+form, label,table, tbody, tfoot, thead, tr, th, td, canvas, footer, header,
+nav, section {
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    vertical-align: baseline;
+    border: 0;
+    outline: 0;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+*::-moz-selection {
+    color: #fff;
+    background-color: #2177d1;
+}
+*::selection {
+    color: #fff;
+    background-color: #2177d1;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+ol,ul,li {
+    /*list-style: none;*/
+}
+input,button,select,textarea {
+    font-family: inherit;
+    outline: none;
+}
+img {
+    border: none;
+}
+a {
+    text-decoration: none;
+}

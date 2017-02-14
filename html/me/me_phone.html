@@ -1,0 +1,24 @@
+
+<ion-view title="我的电话">
+    <ion-header-bar align-title="center" class="bar">
+        <div class="buttons" ng-click="back()">
+            <button class="button">
+                返回
+            </button>
+        </div>
+        <h2 class="title">我的电话</h2>
+        <div class="buttons">
+            <button class="button"
+                    ng-click="submit()">
+                完成
+            </button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="input-box">
+            <span>我的电话</span>
+            <input type="text" ng-model="data.mobileNo" placeholder="请输入电话号码">
+        </div>
+    </ion-content>
+</ion-view>

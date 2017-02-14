@@ -1,0 +1,45 @@
+
+<ion-view title="兑换中心" class="bg-img">
+
+    <ion-content>
+        <div class="header row padding">
+            <div class="coin-box col">
+                <span class="title">燃币:</span>
+                <span class="c-count coins">{{data.TOTAL_INTEGRAL}}</span>
+            </div>
+            <div class="buy-direct col">
+                <button class="button" ng-click="toTaoBao()">哥是豪,直接买>></button>
+            </div>
+        </div>
+        <ion-slide-box auto-play="true" slide-interval="4000" does-continue="true">
+            <ion-slide>
+                <div class="item-image">
+                    <img src="./frame/images/banner_1.jpg">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="item-image">
+                    <img src="./frame/images/banner_2.jpg">
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+
+        <div class="gift-box">
+            <div class="gift-item" ng-repeat="prize in data.PRIZES" ng-class="{'none':prize.prize_count<=0}" ng-click="exgPrize($index)">
+                <div class="img-box">
+                    <img ng-src="{{domain_weburl}}{{prize.prize_image}}" alt="">
+                </div>
+                <div class="gift-item_content">
+                    <h2 class="title">{{prize.prize_name}}</h2>
+                    <!--<p>描述描述描述描述描述描述描述描述</p>-->
+                    <p class="info">
+                        <span class="price">燃币:<span class="c-yellow count">{{prize.get_amt}}</span></span>
+                        <span class="rest">剩余:{{prize.prize_count}}</span>
+                    </p>
+                </div>
+                <i class="icon icon-seal"></i>
+            </div>
+        </div>
+        <wxshare></wxshare>
+    </ion-content>
+</ion-view>

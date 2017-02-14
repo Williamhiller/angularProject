@@ -1,0 +1,26 @@
+
+<ion-view title="我的地址">
+    <ion-header-bar align-title="center" class="bar">
+        <div class="buttons" ng-click="back()">
+            <button class="button">
+                返回
+            </button>
+        </div>
+        <h2 class="title">我的地址</h2>
+        <div class="buttons">
+            <button class="button"
+                    ng-click="submit()">
+                完成
+            </button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="input-box">
+            <span>我的地址</span>
+            <input ng-model="data.address" type="text" placeholder="请输入收货地址">
+        </div>
+
+
+    </ion-content>
+</ion-view>

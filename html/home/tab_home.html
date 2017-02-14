@@ -1,0 +1,117 @@
+
+<ion-view title="天天撸" class="bg-img">
+
+    <ion-content>
+        <div class="header row home">
+            <div class="coin-box col">
+                <span class="title">燃币:</span>
+                <span class="c-count coins">{{data.TOTAL_INTEGRAL}}</span>
+            </div>
+            <div class="count-box col">
+                <span class="title">撸:</span>
+                <span class="c-count coins">{{data.CAN_PRIZE_COUNT}}</span>
+            </div>
+        </div>
+
+        <div class="img-box top-img">
+            <img src="frame/images/lottery_top.png">
+        </div>
+
+        <div class="lottery-box" ng-class="{'hide':loadingFlag}">
+            <div class="row">
+                <div class="lottery lottery0 col" ng-class="{'active':prize==0}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[0].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+                <div class="lottery lottery1 col" ng-class="{'active':prize==1}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[1].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+                <div class="lottery lottery2 col" ng-class="{'active':prize==2}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[2].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="lottery lottery7 col" ng-class="{'active':prize==7}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[7].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+                <!--开始按钮-->
+                <div class="lottery start col">
+                    <button class="button c-yellow"
+                            ng-class="{'button-disabled':isClicked}"
+                            ng-click="lottery()">Start</button>
+                </div>
+
+                <div class="lottery lottery3 col" ng-class="{'active':prize==3}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[3].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="lottery lottery6 col" ng-class="{'active':prize==6}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[6].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+                <div class="lottery lottery5 col" ng-class="{'active':prize==5}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[5].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+                <div class="lottery lottery4 col" ng-class="{'active':prize==4}">
+                    <img ng-src="{{domain_weburl}}{{data.GIFIS[4].prize_image}}">
+                    <div class="mask"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips">
+            <h2 class="title">
+                <span class="left"></span>
+                <span>游戏规则</span>
+                <span class="right"></span>
+            </h2>
+            <div class="text">
+                <ol>
+                    <li>每个微信账号每天可以免费撸一把，把本页<span class="c-yellow">分享到朋友圈</span>可以增加1次机会。</li>
+                    <li>关于中奖概率：点卷和实物礼品都可能抽中，概率绝不弄虚作假，小燃在这里透露一下，点卷的中间概率约为5000/1，是不是欧洲人试试就知道啦。</li>
+                </ol>
+            </div>
+        </div>
+        <div class="tips">
+            <h2 class="title">
+                <span class="left"></span>
+                <span>游戏说明</span>
+                <span class="right"></span>
+            </h2>
+            <div class="text">
+                <ol>
+                    <li>燃币是<span class="c-yellow">爆炸输出电竞周边</span>粉丝独有的活跃度奖励，可通过燃币在兑奖中心兑换英雄联盟点卷，守望先锋战网点卷，爆炸输出电竞周边小礼品等。</li>
+                    <li>抽中或者兑换奖品的玩家，在电竞之家<span class="c-yellow">完善个人信息</span>，耐心等待工作人员将在两个工作日内联系您领奖。</li>
+                    <li>本游戏官方拥有最终解释权。</li>
+                </ol>
+            </div>
+        </div>
+        <div class="tips">
+            <h2 class="title">
+                <span class="left"></span>
+                <span>奖品一览</span>
+                <span class="right"></span>
+            </h2>
+            <div class="text">
+                <div class="gift-list clear" align="center">
+                    <div class="vertical-item" ng-repeat="prize in data.PRIZES">
+                        <div class="img-box">
+                            <img ng-src="{{domain_weburl}}{{prize.prize_image}}" alt="">
+                        </div>
+                        <div class="content">
+                            <h2>{{prize.prize_name}}</h2>
+                            <!--<p>什么什么什么</p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <wxshare count="data.CAN_PRIZE_COUNT"></wxshare>
+    </ion-content>
+</ion-view>
